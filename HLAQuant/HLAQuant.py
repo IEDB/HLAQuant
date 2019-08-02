@@ -20,8 +20,6 @@ class HLAQuant:
         self.package_directory = os.path.dirname(os.path.abspath(__file__))
         self.IMGT_URL = ("ftp://ftp.ebi.ac.uk/pub/databases/ipd/",
                          "imgt/hla/hla_nuc.fasta")
-        self.salmon_dir = os.path.join(
-            self.package_directory, 'data/salmon-0.11.2-linux_x86_64/bin/salmon')
         self.imgt_loc = os.path.join(
             self.package_directory, 'data/hla_nuc.fasta')
         self.threads = threads
@@ -67,7 +65,7 @@ class HLAQuant:
 
         sample -- the sample id
         """
-        salmon_index = (" ").join([self.salmon_dir, "index", "-p", self.threads, "-t",
+        salmon_index = (" ").join(["salmon", "index", "-p", self.threads, "-t",
                                    self.out_dir + sample + ".fasta", "-i",
                                    self.out_dir + sample + "_index"])
         self.run_cmd(salmon_index)
@@ -81,14 +79,14 @@ class HLAQuant:
         """
         if paired:
             fq1, fq2 = fq_files
-            salmon_quant = (" ").join([self.salmon_dir, "quant", "-p", self.threads,
+            salmon_quant = (" ").join(["salmon", "quant", "-p", self.threads,
                                        "-i", self.out_dir + sample + "_index", "-l", "A",
                                        "-1", fq1, "-2", fq2, "--validateMappings",
                                        "--rangeFactorizationBins", "4"
                                        "--minScoreFraction", "1", "-o", self.out_dir + sample])
         else:
             fq = fq_files
-            salmon_quant = (" ").join([self.salmon_dir, "quant", "-p", self.threads,
+            salmon_quant = (" ").join(["salmon", "quant", "-p", self.threads,
                                        "-i", self.out_dir + sample + "_index", "-l", "A",
                                        "-r", fq, "--validateMappings",
                                        "--rangeFactorizationBins", "4",

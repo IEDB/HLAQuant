@@ -7,7 +7,7 @@ HLAQuant is a pipeline that produces fast and accurate allele specific expressio
 ## Requirements:
 - Linux OS
 - NCBI Blast+
-- Salmon (distributed with package)
+- Salmon -- please ensure Salmon is on your PATH!
 - Python 3+
   - Python packages: Pandas, BioPython
 
