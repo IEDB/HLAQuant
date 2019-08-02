@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/acrinklaw/hlaquant",
     packages=setuptools.find_packages(),
-    package_data={'HLAQuant': ['data/blastdb/*', 'data/hla_nuc.fasta']},
+    package_data={'HLAQuant': ['data/blastdb/*', 'test_data/*', 'data/hla_nuc.fasta', 'data/salmon-0.11.2-linux_x86_64/*']},
     install_requires=[
         'pandas',
         'biopython',],
