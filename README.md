@@ -44,4 +44,5 @@ The paper outlining this method in detail can be found [....somewhere when it is
 
 ## References:
 This pipeline would be unable to work without Salmon
+
 Patro, R., Duggal, G., Love, M. I., Irizarry, R. A., & Kingsford, C. (2017). Salmon provides fast and bias-aware quantification of transcript expression. Nature Methods.
