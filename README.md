@@ -2,12 +2,12 @@
 ### Author: Austin Crinklaw
 
 ## What is it?
-HLAQuant is a pipeline that produces fast and accurate allele specific expression for HLA genes. This is done by quantifying on the peptide binding groove domain using Salmon with personalized sequences.
+HLAQuant is a pipeline that produces fast and accurate allele specific expression for HLA genes. This is done by using sequences specific to a donor's HLA typing to quantify expression.
 
 ## Requirements:
 - Linux OS
 - NCBI Blast+
-- Salmon -- please ensure Salmon is on your PATH!
+- Salmon -- please ensure Salmon is on your PATH environment variable.
 - Python 3+
   - Python packages: Pandas, BioPython
 
@@ -36,13 +36,16 @@ The output will match that of Salmons. It consists of a tab separated file conta
 
 ## How does it work?
 - We first take the list of alleles and fetch the corresponding sequences from IMGT
-- Next we extract the sequences corresponding to their groove domains from these sequences
-- We build an index for quantification using these G-domain sequences
-- We then perform quantification using this index
+- We build an index for quantification using these sequences
+- We then perform quantification using this personalized index
 
-The paper outlining this method in detail can be found [....somewhere when it is published]
 
 ## References:
-This pipeline would be unable to work without Salmon
+This pipeline would be unable to work without Salmon.
 
 Patro, R., Duggal, G., Love, M. I., Irizarry, R. A., & Kingsford, C. (2017). Salmon provides fast and bias-aware quantification of transcript expression. Nature Methods.
+
+More recently, Aguiar et al. display evidence of improving expression estimates and eQTL analysis using personalized sequences
+
+Aguiar VRC, César J, Delaneau O, Dermitzakis ET, Meyer D. Expression estimation and eQTL mapping for HLA genes with a personalized pipeline. PLoS Genet. 2019;15(4):e1008091. Published 2019 Apr 22. doi:10.1371/journal.pgen.1008091
+
